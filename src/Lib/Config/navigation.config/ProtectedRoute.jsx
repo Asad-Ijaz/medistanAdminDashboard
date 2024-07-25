@@ -4,7 +4,7 @@ import ProtectedLayout from "../../../Components/Layout/ProtectedLayout";
 import { useAUth } from "../../Hooks/useAuth";
 const ProtectedRoute = () => {
   const { user } = useAUth();
-  return user ? (
+  return !!user ? (
     <Suspense fallback={null}>
       <ProtectedLayout>
         <Outlet />

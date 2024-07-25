@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useDispatch } from "react-redux";
-
+import { NETWORK_ERROR } from "../Lib/Consts/Error.consts";
 class InvitationController {
   static getAllInvitation(accessToken) {
     console.log(accessToken, "accessToken");
@@ -13,18 +13,15 @@ class InvitationController {
         },
       })
         .then((res) => {
-          if (res) {
-            if (res?.data?.success) {
-              resolve(res?.data);
-              console.log(res, "invitation data");
-            } else {
-              reject(res?.data?.error?.message);
-            }
+          if (res?.data?.success) {
+            resolve(res?.data);
+            console.log(res, "invitation data");
+          } else {
+            reject(res?.data?.error?.message);
           }
         })
-        .catch((err) => {
-          console.log(err, "error");
-          reject(err);
+        .catch(() => {
+          reject(NETWORK_ERROR);
         });
     });
   }

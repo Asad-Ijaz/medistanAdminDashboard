@@ -11,7 +11,7 @@ const PublicRoute = () => {
       </AuthLayout>
     </Suspense>
   ) : (
-    <Navigate to={"/notifications"} />
+    <Navigate to={"/invitations"} />
   );
 };
 

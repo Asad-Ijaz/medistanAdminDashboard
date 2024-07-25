@@ -1,22 +1,23 @@
 import React from "react";
+import SignInView from "../../../View/AuthView/signinView.jsx";
+import InvitationView from "../../../View/InvitationView/InvitationDoctorStatusTable.jsx";
+import DoctorsView from "../../../View/DoctorsView";
 export const publicRoutes = [
   {
     key: "Home",
     path: "/",
-    component: React.lazy(() =>
-      import("../../../View/AuthView/signinView.jsx")
-    ),
+    component: SignInView,
   },
 ];
 export const protectedRoutes = [
   {
     key: "Invitations",
     path: "/invitations",
-    component: React.lazy(() => import("../../../View/InvitationView.jsx")),
+    component: InvitationView,
   },
   {
     key: "Doctors",
     path: "/doctors",
-    component: React.lazy(() => import("../../../View/DoctorsView")),
+    component: DoctorsView,
   },
 ];

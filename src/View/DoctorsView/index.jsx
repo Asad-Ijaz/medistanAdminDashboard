@@ -7,8 +7,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../Components/ui/table";
-import { Button } from "../Components/ui/button";
+} from "../../Components/Ui/table";
+import { Button } from "../../Components/Ui/button";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -16,7 +16,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../Components/ui/dropdown-menu";
+} from "../../Components/Ui/dropdown-menu";
 const DoctorsView = () => {
   return (
     <div className="w-full ">
