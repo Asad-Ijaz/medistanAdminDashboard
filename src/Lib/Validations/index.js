@@ -1,8 +1,2 @@
-import * as Yup from "yup";
-export const loginSchema = Yup.object().shape({
-  email: Yup.string().required("Email is required!"),
-  password: Yup.string().required("Password is required!"),
-});
-export const inviteDoctorSchema = Yup.object().shape({
-  email: Yup.string().required("Email is required!"),
-});
+export * from "./AuthValidations";
+export * from "./DoctorValidation";

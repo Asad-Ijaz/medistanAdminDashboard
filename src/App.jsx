@@ -9,9 +9,13 @@ import PageNotFound from "./View/404View";
 import SignInView from "./View/AuthView/signinView.jsx";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useAUth } from "./Lib/Hooks/useAuth.js";
+import AuthController from "./Controllers/AuthController.js";
 function App() {
   const selector = useSelector((state) => state);
   console.log(selector, "selector is ");
+  const { user } = useAUth();
+  !user && AuthController.restorePersistedCredentials();
   return (
     <>
       <Routes>

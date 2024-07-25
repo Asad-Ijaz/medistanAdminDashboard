@@ -1,33 +1,62 @@
 import axios from "axios";
+import { NETWORK_ERROR } from "../Lib/Consts/Error.consts";
+import { setSession, userLoggedOut } from "../Lib/Store/Slices/AuthSlice";
+import { apiClient } from "../Lib/Config/api.config";
+import { store } from "../Lib/Store";
+
 class AuthController {
   static SignIn(data) {
     return new Promise((resolve, reject) => {
-      axios({
-        url: `${import.meta.env.VITE_API_URL}api/admin/auth/sign-in`,
-        method: "POST",
-        data: data,
-      })
+      apiClient
+        .post(`api/admin/auth/sign-in`, data)
         .then((res) => {
-          if (res) {
-            if (res?.data?.success) {
-              const adminData = {
-                user: res?.data?.data?.user,
-                accessToken: res?.data?.data?.accessToken,
-              };
-              const adminDataString = JSON.stringify(adminData);
+          if (res?.data?.success) {
+            const adminData = {
+              user: res?.data?.data?.user,
+              accessToken: res?.data?.data?.accessToken,
+            };
+            store.dispatch(setSession(adminData));
+            AuthController?.persistCredentials(adminData);
 
-              localStorage.setItem("adminInfo", adminDataString);
-              resolve(res?.data);
-              console.log(res, "login successful");
-            } else {
-              reject(res?.data?.error?.message);
-            }
+            resolve(res?.data);
+            console.log(res, "login successful");
+          } else {
+            reject(res?.data?.error?.message);
           }
         })
         .catch((err) => {
-          reject(err);
+          reject(NETWORK_ERROR);
         });
     });
   }
+  static persistCredentials = (session) => {
+    if (!!session) {
+      store.dispatch(setSession(session));
+      localStorage?.setItem("Medicine-adminInfo", JSON.stringify(session));
+    }
+  };
+  static getPersistedCredentials = () => {
+    let strSessionData = localStorage?.getItem("Medicine-adminInfo");
+    if (strSessionData) {
+      return JSON.parse(strSessionData);
+    } else {
+      return null;
+    }
+  };
+  static restorePersistedCredentials() {
+    let persistedData = AuthController.getPersistedCredentials();
+    console.log(persistedData, "@persisted data.!");
+    if (persistedData) {
+      store.dispatch(setSession(persistedData));
+      return persistedData?.user;
+    } else {
+      return false;
+    }
+  }
+  static logout = async () => {
+    await store.dispatch(setSession(null));
+    await localStorage?.removeItem("Medicine-adminInfo");
+    await store.dispatch(userLoggedOut());
+  };
 }
 export default AuthController;
