@@ -25,9 +25,7 @@ import InvitationDoctorDialog from "./InvitationDoctorDialog";
 import { TableSkelton } from "../../Components/Shared/Skelton/tableSkelton";
 
 const InvitationDoctorStatusTable = () => {
-  const inviteData = useInvitations();
-  const { invitationData, loading } = inviteData;
-  console.log(invitationData, "what is dataview");
+  const { invitationData, loading } = useInvitations();
 
   return (
     <div className="w-full ">
