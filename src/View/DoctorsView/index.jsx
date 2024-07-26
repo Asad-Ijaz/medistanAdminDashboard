@@ -43,9 +43,6 @@ const DoctorsView = () => {
                     <Button className="hover:outline-none hover:border-none">
                       ...
                     </Button>
-                    <Button className="hover:outline-none hover:border-none">
-                      ...
-                    </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="w-56">
                     <DropdownMenuCheckboxItem className="cursor-pointer">
