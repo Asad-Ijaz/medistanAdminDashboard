@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import { useAUth } from "@/Hooks/useAuth";
-import ProtectdLayout from "@/components/Layout/ProtectedLayout";
+import ProtectdLayout from "@/components/Layout/ProtectedLayout.jsx";
 const ProtectedRoute = () => {
   const { user } = useAUth();
   return !!user ? (
