@@ -1,6 +1,6 @@
-import useInvitations from "../../lib/Hooks/useInvitations";
-import InvitationController from "../../Controllers/InvitationController";
-import { useAUth } from "../../lib/Hooks/useAuth";
+import useInvitations from "@/Hooks/useInvitations";
+import InvitationController from "@/Controllers/InvitationController";
+import { useAUth } from "@/Hooks/useAuth";
 import React, { useEffect, useState } from "react";
 import {
   Table,
@@ -10,8 +10,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../../components/ui/table";
-import { Button } from "../../components/ui/button";
+} from "@/components/ui/table";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -19,11 +19,10 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../../components/ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 
 import InvitationDoctorDialog from "./InvitationDoctorDialog";
-import { TableSkelton } from "../../components/Shared/Skelton/tableSkelton";
-
+import { TableSkelton } from "@/components/Shared/Skelton/tableSkelton";
 const InvitationDoctorStatusTable = () => {
   const { invitationData, loading } = useInvitations();
 

@@ -7,7 +7,7 @@ import {
   TransitionChild,
 } from "@headlessui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import AuthController from "../../../Controllers/AuthController";
+import AuthController from "@/Controllers/AuthController";
 const navigation = [
   { name: "Invitations", href: "/invitations" },
   { name: "Doctors", href: "/doctors" },

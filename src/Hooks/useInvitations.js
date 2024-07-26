@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useAUth } from "./useAuth";
-import InvitationController from "../../Controllers/InvitationController";
+import InvitationController from "@/Controllers/InvitationController";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllInvitations } from "../../Store/Slices/InvitationsSlice";
+import { getAllInvitations } from "@/Store/Slices/InvitationsSlice";
 const useInvitations = () => {
   const { accessToken } = useAUth();
   const dispatch = useDispatch();
