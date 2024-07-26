@@ -6,11 +6,11 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../../Components/Ui/dialog";
+} from "../../components/ui/dialog";
 import { useFormik } from "formik";
-import { inviteDoctorSchema } from "../../Lib/Validations/DoctorValidation";
-import { Input } from "../../Components/Ui/input";
-import { Button } from "../../Components/Ui/button";
+import { inviteDoctorSchema } from "../../lib/Validations/DoctorValidation";
+import { Input } from "../../components/ui/input";
+import { Button } from "../../components/ui/button";
 
 const InvitationDoctorDialog = ({ children }) => {
   const [loading, setLoading] = useState(false);

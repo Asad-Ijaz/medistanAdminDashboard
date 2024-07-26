@@ -1,5 +1,5 @@
-import { Skeleton } from "../../Ui/skeleton";
-import { TableCell, TableRow } from "../../Ui/table";
+import { Skeleton } from "../../ui/skeleton";
+import { TableCell, TableRow } from "@/components/ui/table";
 
 export const TableSkelton = ({ rowsNumber, columnNumber, bgColor }) => {
   const makeRowsNumber = rowsNumber ?? 5;

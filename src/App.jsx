@@ -2,14 +2,17 @@ import { useState } from "react";
 import "./App.css";
 import { useSelector, useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
-import ProtectedRoute from "./Lib/Config/navigation.config/ProtectedRoute.jsx";
-import PublicRoutes from "./Lib/Config/navigation.config/PublicRoute.jsx";
-import { protectedRoutes, publicRoutes } from "./Lib/Config/routes.config";
+import ProtectedRoute from "./lib/Config/navigation.config/ProtectedRoute.jsx";
+import PublicRoutes from "./lib/Config/navigation.config/PublicRoute.jsx";
+import {
+  protectedRoutes,
+  publicRoutes,
+} from "./lib/Config/routes.config/index.jsx";
 import PageNotFound from "./View/404View";
 import SignInView from "./View/AuthView/signinView.jsx";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useAUth } from "./Lib/Hooks/useAuth.js";
+import { useAUth } from "./lib/Hooks/useAuth.js";
 import AuthController from "./Controllers/AuthController.js";
 function App() {
   const selector = useSelector((state) => state);

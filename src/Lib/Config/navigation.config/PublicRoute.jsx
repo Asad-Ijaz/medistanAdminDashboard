@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import AuthLayout from "../../../Components/Layout/AuthLayout";
+import AuthLayout from "../../../components/Layout/AuthLayout";
 import { useAUth } from "../../Hooks/useAuth";
 const PublicRoute = () => {
   const { user } = useAUth();
