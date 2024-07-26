@@ -1,4 +1,4 @@
-import AuthController from "../../Controllers/AuthController";
+import AuthController from "@/Controllers/AuthController";
 
 import axios from "axios";
 

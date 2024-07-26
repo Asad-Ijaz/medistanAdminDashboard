@@ -1,8 +1,9 @@
 import React, { Suspense } from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import AuthLayout from "../../../components/Layout/AuthLayout";
-import { useAUth } from "../../Hooks/useAuth";
-const PublicRoute = () => {
+import AuthLayout from "@/components/Layout/AuthLayout";
+import { useAUth } from "@/Hooks/useAuth";
+
+const PublicRoutes = () => {
   const { user } = useAUth();
   return !user ? (
     <Suspense fallback={null}>
@@ -15,4 +16,4 @@ const PublicRoute = () => {
   );
 };
 
-export default PublicRoute;
+export default PublicRoutes;
