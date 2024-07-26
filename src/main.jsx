@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./App.css";
-import { store } from "@/lib/Store/index.js";
+import { store } from "./lib/Store";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
