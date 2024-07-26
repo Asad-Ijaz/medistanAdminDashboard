@@ -1,8 +1,8 @@
 import axios from "axios";
-import { NETWORK_ERROR } from "../Consts/Error.consts";
-import { setSession, userLoggedOut } from "../Store/Slices/AuthSlice";
-import { apiClient } from "../lib/Config/api.config";
-import { store } from "../Store";
+import { NETWORK_ERROR } from "@/Consts/Error.consts";
+import { setSession, userLoggedOut } from "@/Store/Slices/AuthSlice";
+import { apiClient } from "@/Config/api.config";
+import { store } from "@/Store";
 
 class AuthController {
   static SignIn(data) {

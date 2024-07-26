@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { NETWORK_ERROR } from "../Consts/Error.consts";
+import { NETWORK_ERROR } from "@/Consts/Error.consts";
+
 class InvitationController {
   static getAllInvitation(accessToken) {
     console.log(accessToken, "accessToken");
