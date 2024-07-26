@@ -1,14 +1,14 @@
 import React, { Suspense } from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import ProtectedLayout from "@/components/Layout/ProtectedLayout";
 import { useAUth } from "@/Hooks/useAuth";
+import ProtectdLayout from "@/components/Layout/ProtectedLayout";
 const ProtectedRoute = () => {
   const { user } = useAUth();
   return !!user ? (
     <Suspense fallback={null}>
-      <ProtectedLayout>
+      <ProtectdLayout>
         <Outlet />
-      </ProtectedLayout>
+      </ProtectdLayout>
     </Suspense>
   ) : (
     <Navigate to={"/"} />
