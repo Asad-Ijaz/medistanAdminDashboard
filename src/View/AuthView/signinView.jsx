@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Input } from "../../Components/Ui/input";
-import { Button } from "../../Components/Ui/button";
-import { loginSchema } from "../../Lib/Validations/AuthValidations";
 import { useFormik } from "formik";
-import AuthController from "../../Controllers/AuthController";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { Input } from "@/Components/Ui/input";
+import { Button } from "@/Components/Ui/button";
+import AuthController from "@/Controllers/AuthController";
+import { loginSchema } from "@/Lib/Validations";
 const SignInView = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
